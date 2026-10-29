@@ -51,9 +51,9 @@ export default function Login() {
       </section>
       <section className="login-card">
         <h2>Sign in</h2>
-        <p className="lede">
+        {/* <p className="lede">
           Production will call the Manulife Authentication API and match the person by email. This demo keeps a local directory so the journey can be reviewed.
-        </p>
+        </p> */}
         <form onSubmit={submit}>
           <label className="field">
             Username
@@ -69,7 +69,7 @@ export default function Login() {
         <p className="muted">Password reset is not available here. ML IT manages account passwords.</p>
 
         <h3>Demo directory</h3>
-        <p className="muted">Each row is a different person. The password is not shared.</p>
+        {/* <p className="muted">Each row is a different person. The password is not shared.</p> */}
         <div className="table-wrap">
           <table className="data">
             <thead>
