@@ -41,7 +41,7 @@ export default function Login() {
     <div className="login-split">
       <section className="brand-panel">
         <p className="eyebrow">Consent Management System</p>
-        <h1>Staff sign in for Manulife agents and employees.</h1>
+        <h1>Staff sign in for agents and employees.</h1>
         <ol>
           <li>Each person signs in with their own username and password.</li>
           <li>The first login waits for an admin to approve it and assign a role.</li>
@@ -51,13 +51,11 @@ export default function Login() {
       </section>
       <section className="login-card">
         <h2>Sign in</h2>
-        {/* <p className="lede">
-          Production will call the Manulife Authentication API and match the person by email. This demo keeps a local directory so the journey can be reviewed.
-        </p> */}
+       
         <form onSubmit={submit}>
           <label className="field">
             Username
-            <input value={email} onChange={function (event) { setEmail(event.target.value) }} autoComplete="username" placeholder="name@manulife.com" />
+            <input value={email} onChange={function (event) { setEmail(event.target.value) }} autoComplete="username" placeholder="name@gmail.com" />
           </label>
           <label className="field">
             Password
@@ -103,7 +101,7 @@ export default function Login() {
           </label>
           <label className="field">
             Username
-            <input value={request.email} onChange={function (event) { setRequest(Object.assign({}, request, { email: event.target.value })) }} placeholder="name@manulife.com" />
+            <input value={request.email} onChange={function (event) { setRequest(Object.assign({}, request, { email: event.target.value })) }} placeholder="name@gmail.com" />
           </label>
           <label className="field">
             Password
