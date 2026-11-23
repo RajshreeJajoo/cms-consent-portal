@@ -30,5 +30,7 @@ export function formatBytes(size) {
 }
 
 export function absUrl(path) {
-  return window.location.origin + path
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+  const route = path.charAt(0) === '/' ? path : '/' + path
+  return window.location.origin + base + route
 }

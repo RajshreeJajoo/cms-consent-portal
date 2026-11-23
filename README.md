@@ -1,23 +1,22 @@
-# CMS consent portal
+# CMS Consent Portal
 
-Phase 1 consent intake demo. It runs entirely in the browser.
+Live demo: [https://rajshreejajoo.github.io/cms-consent-portal/](https://rajshreejajoo.github.io/cms-consent-portal/)
 
-Vite 4 is used so the app runs on Node.js 14. Current Vite needs Node.js 18 or newer.
+A browser-only consent management demo for a sales campaign. Advisers, operations, and compliance staff work from one register. A prospect can scan a campaign QR code and submit marketing consent on their own phone. Nothing is sent to a server: accounts, consent records, and the do-not-contact list stay in the browser.
 
-## Run
+## What a reviewer can try
 
-```bash
-npm install
-npm run dev
-```
+- Sign in as four different roles. Each role sees a different menu.
+- Approve or reject a first-time access request as admin.
+- Enter a new consent, including a paper scan, and open it on the register.
+- Open a campaign QR. The public form is tied to that campaign and adviser.
+- Withdraw consent, change contact preferences, or use the unsubscribe link.
+- Check whether a person may be contacted for a purpose and channel.
+- Load a do-not-contact list. A listing overrides an earlier opt-in.
 
-Open the local address Vite prints, usually http://localhost:5173
+## Demo sign-in
 
-To scan a QR code from a phone, use the Network address Vite prints and keep the dev server running.
-
-## Sign in
-
-Each person has a separate username and password. There is no password reset on this screen.
+The sign-in screen lists the same accounts. There is no password reset in this demo.
 
 | Username | Password | Access |
 | --- | --- | --- |
@@ -27,9 +26,24 @@ Each person has a separate username and password. There is no password reset on 
 | admin@cms.demo | Admin#1001 | Admin, approves first login |
 | amir.hassan@cms.demo | Amir#7781 | Waiting for admin approval |
 
-## Checks
+## Stack
+
+React 18, React Router 6, and Vite 4. Consent rules (validation, duplicates, withdrawal, and eligibility) are plain JavaScript and covered by `npm run test:rules`. Vite 4 is pinned so the app still runs on Node.js 14. Current Vite needs Node.js 18 or newer.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open the address Vite prints, usually http://localhost:5173.
+
+To scan a QR code from a phone, use the Network address Vite prints and keep the dev server running.
 
 ```bash
 npm run test:rules
 npm run build
 ```
+
+`main` deploys to GitHub Pages. The published site is served from `/cms-consent-portal/`, so campaign QR links include that path.

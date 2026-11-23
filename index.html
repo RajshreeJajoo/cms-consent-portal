@@ -3,7 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Consent management demo: staff roles, campaign QR intake, a consent register, withdrawal, and do-not-contact checks. Runs in the browser."
+    />
     <title>CMS — Consent Management</title>
+    <script>
+      // Restores the route after GitHub Pages serves 404.html for a client-side path.
+      (function (location) {
+        if (location.search.charAt(1) === '/') {
+          var decoded = location.search
+            .slice(1)
+            .split('&')
+            .map(function (part) { return part.replace(/~and~/g, '&') })
+            .join('?')
+          window.history.replaceState(null, '', location.pathname.slice(0, -1) + decoded + location.hash)
+        }
+      })(window.location)
+    </script>
   </head>
   <body>
     <div id="root"></div>
